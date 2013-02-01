@@ -137,11 +137,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\ng-grid.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\vendor\jquery-1.9.0.intellisense.js" />
     <Content Include="index.html" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\controllers\LFGCtrl.js" />
     <Content Include="Scripts\vendor\angular\angular-bootstrap-prettify.js" />
     <Content Include="Scripts\vendor\angular\angular-bootstrap-prettify.min.js" />
     <Content Include="Scripts\vendor\angular\angular-bootstrap.js" />
@@ -325,9 +327,13 @@
     <Content Include="Scripts\vendor\jquery.validate.min.js" />
     <Content Include="Scripts\vendor\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\vendor\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\vendor\jstd-scenario-adapter-config.js" />
-    <Content Include="Scripts\vendor\jstd-scenario-adapter.js" />
+    <Content Include="Scripts\vendor\angular\jstd-scenario-adapter-config.js" />
+    <Content Include="Scripts\vendor\angular\jstd-scenario-adapter.js" />
     <Content Include="Scripts\vendor\modernizr-2.6.2.js" />
+    <Content Include="Scripts\vendor\ng-grid-1.6.0.debug.int.js" />
+    <Content Include="Scripts\vendor\ng-grid-1.6.0.debug.js" />
+    <Content Include="Scripts\vendor\ng-grid-1.6.0.int.js" />
+    <Content Include="Scripts\vendor\ng-grid-1.6.0.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -353,7 +359,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\controllers\" />
     <Folder Include="Scripts\directives\" />
     <Folder Include="Scripts\filters\" />
     <Folder Include="Views\" />

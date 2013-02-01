@@ -18,5 +18,6 @@ namespace GW2FALFG.Web.Models
         public int LookingForNumber { get; set; }
         public string LanguagePreference { get; set; }
         public int AgonyResistRequired { get; set; }
+        public string UserGuid { get; set; }
     }
 }
