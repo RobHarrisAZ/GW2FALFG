@@ -127,6 +127,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GroupRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +140,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\vendor\jquery-1.9.0.intellisense.js" />
+    <Content Include="index.html" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\vendor\angular\angular-bootstrap-prettify.js" />
     <Content Include="Scripts\vendor\angular\angular-bootstrap-prettify.min.js" />
     <Content Include="Scripts\vendor\angular\angular-bootstrap.js" />
@@ -374,7 +377,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>38203</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:35887/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
