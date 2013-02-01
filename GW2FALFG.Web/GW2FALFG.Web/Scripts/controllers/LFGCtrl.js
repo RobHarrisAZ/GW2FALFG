@@ -1,0 +1,1 @@
+﻿LFG.controllers = angular.controller()
