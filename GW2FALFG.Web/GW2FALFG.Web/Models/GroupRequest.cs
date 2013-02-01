@@ -34,6 +34,8 @@ namespace GW2FALFG.Web.Models
         [Required]
         public bool SpeedRunFl { get; set; }
         [Required]
+        public DateTime Timestamp { get; set; }
+        [Required]
         [StringLength(16)]
         public string UserGuid { get; set; }
     }

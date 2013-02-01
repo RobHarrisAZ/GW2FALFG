@@ -6,8 +6,13 @@
             });
         },
         getGroupRequestById = function(id) {
-            $http.get('/api/group/' + id).success(function (response) {
+            $http.get('/api/group/' + id).success(function(response) {
                 $scope.GroupRequest = response;
+            });
+        },
+        getGroupRequestsByEvent = function(event) {
+            $http.get('/api/group/get').success(function(response) {
+                $scope.GroupRequestsAll = response;
             });
         };
 

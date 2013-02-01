@@ -122,9 +122,10 @@ namespace GW2FALFG.Web.Data
                 Level = 80,
                 LookingForNumber = 2,
                 NewToDungeonFl = false,
+                PlayerName = "Hellsbain Minion",
                 SpeedRunFl = true,
-                UserGuid = new System.Guid().ToString(),
-                PlayerName = "Hellsbain Minion"
+                Timestamp = DateTime.Now,
+                UserGuid = new System.Guid().ToString()
             });
             context.SaveChanges();
         }
