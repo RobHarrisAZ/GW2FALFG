@@ -25,7 +25,7 @@ namespace GW2FALFG.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Database.SetInitializer(new GroupRequestContextInitializer());
+            //Database.SetInitializer(new GroupRequestContextInitializer());
         }
     }
 }

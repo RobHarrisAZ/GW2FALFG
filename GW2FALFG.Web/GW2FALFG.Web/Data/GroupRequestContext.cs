@@ -12,9 +12,10 @@ namespace GW2FALFG.Web.Data
         public DbSet<Language> Languages { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<GroupRequest> GroupRequests { get; set; }
-            public GroupRequestContext()
-            {
-                Configuration.ProxyCreationEnabled = false;
-            }
+        public GroupRequestContext(string connString) : base(connString)
+        {
+            Configuration.ProxyCreationEnabled = false;
+        }
+
     }
 }

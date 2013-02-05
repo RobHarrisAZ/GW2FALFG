@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using GW2FALFG.Web.Models;
+using System.Configuration;
 
 namespace GW2FALFG.Web.Data
 {
@@ -11,7 +12,8 @@ namespace GW2FALFG.Web.Data
     {
         private GroupRequestContext _db { get; set; }
 
-        public GroupRequestRepository() :this (new GroupRequestContext())
+        public GroupRequestRepository()
+            : this(new GroupRequestContext("LFG"))
         {
         }
         public GroupRequestRepository(GroupRequestContext db)
