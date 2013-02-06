@@ -1,0 +1,31 @@
+﻿<div class="row">
+    <div class="span12"><input id="addNew" type="button" class="btn btn-inverse" value="New Group Request"  ng-click="addNew()"/></div>
+</div>
+<div class="row">
+    <div class="span12">
+        <table id="groupGrid" class="table">
+            <tr>
+                <th>&nbsp;</th>
+                <th>Character</th>
+                <th>Level</th>
+                <th>Event Name</th>
+                <th>LFxM</th>
+                <th>Description</th>
+                <th>Language Preference</th>
+                <th>Amt Agony Resist</th>
+                <th>Attributes</th>
+            </tr>
+            <tr ng-repeat="groupRequest in groupRequestsAll">
+                <!--Template for Grid-->
+                <td ng-bind="groupRequest.groupRequestId" class="hide-text"></td>
+                <td ng-bind="groupRequest.Level"></td>
+                <td ng-bind="groupRequest.EventName"></td>
+                <td ng-bind="groupRequest.LookingForNumber"></td>
+                <td ng-bind="groupRequest.Description"></td>
+                <td ng-bind="groupRequest.LanguagePreference"></td>
+                <td ng-bind="groupRequest.AgonyResistRequired"></td>
+                <td><!--Need to write a filter for attributes: FullRunFl, ExperiencedOnlyFl, NewToDungeonFl, SpeedRunFl--></td>
+            </tr>
+        </table>
+    </div>
+</div>

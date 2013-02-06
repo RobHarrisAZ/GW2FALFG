@@ -184,8 +184,10 @@
     <None Include="Scripts\vendor\jquery-1.9.0.intellisense.js" />
     <Content Include="index.html" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\controllers\AddRequestCtrl.js" />
     <Content Include="Scripts\controllers\LFGCtrl.js" />
     <None Include="Scripts\vendor\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\vendor\jquery.cookie.js" />
     <Content Include="Scripts\vendor\jquery.validate.js" />
     <Content Include="Scripts\vendor\jquery.validate.min.js" />
     <Content Include="Scripts\vendor\angular\angular-bootstrap-prettify.js" />
@@ -375,6 +377,8 @@
     <Content Include="Scripts\vendor\ng-grid-1.6.0.debug.js" />
     <Content Include="Scripts\vendor\ng-grid-1.6.0.int.js" />
     <Content Include="Scripts\vendor\ng-grid-1.6.0.js" />
+    <Content Include="Views\editgroup.html" />
+    <Content Include="Views\showgroups.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -405,7 +409,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\directives\" />
     <Folder Include="Scripts\filters\" />
-    <Folder Include="Views\" />
+    <Folder Include="Scripts\services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

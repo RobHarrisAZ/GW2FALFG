@@ -89,6 +89,46 @@ footer {
     visibility: hidden;
 }
 
+label.topLabel, label.topLabelsm {
+    display: block;
+    float: left;
+    font-size: 8px;
+    color: #000;
+    font-family: Arial;
+    line-height: 12px;
+    margin: 0px 10px 0px 0px;
+    padding: 0px 0px 12px 0px;
+    /*/width: 150px;*/
+}
+
+label.topLabel input {
+    float: left;
+    width: 150px;
+    padding: 0px;
+    display: block;
+    margin-top: 3px;
+}
+
+label.topLabelsm input {
+    float: left;
+    width: 50px;
+    padding: 0px;
+    display: block;
+    margin-top: 3px;
+}
+
+
+
+label.topLabel select {
+    float: left;
+    width: 240px;
+    padding: 0px;
+    display: block;
+    margin-top: 3px;
+    height: 22px;
+
+}
+
 h1, h2, h3,
 h4, h5, h6 {
     color: #000;
@@ -399,7 +439,9 @@ aside {
 fieldset {
     border: none;
     margin: 0;
-    padding: 0;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, .3);
+    width: 100%;
 }
 
     fieldset legend {
@@ -425,7 +467,7 @@ label.checkbox {
     display: inline;
 }
 
-input, textarea {
+textarea {
     border: 1px solid #e2e2e2;
     background: #fff;
     color: #333;

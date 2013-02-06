@@ -13,23 +13,9 @@
                 <h1>Evils Empire Presents LFG for Fort Aspenwood</h1> 
                 <div><img class="logosm" src="Content/images/GW2_Logo_sm.png" /></div>
             </header>
+            <br>
             <div class="main-content" ng-controller="LFGCtrl">
-                <form id="groupForm">
-                    <script type="text/ng-template" id="newGroupTemplate">
-            
-                    </script>
-                    <div class="row">
-                        <div class="span6"><input id="addNew" type="button" class="btn btn-inverse" value="New Group Request"/></div>
-                        <div class="span6"></div>
-                    </div>
-                    <div class="row">
-                        <div class="span9">
-                            <div id="groupGrid" ng-repeat="groupRequest in groupRequests">
-                                <!--Template for Grid-->
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                <div ng-include src="viewUrl"></div>
             </div>
             <footer>&copy; 2013 Infidelux</footer>
         </div>
@@ -37,7 +23,6 @@
         <script src="Scripts/vendor/bootstrap.js"></script>
         <script src="Scripts/vendor/modernizr-2.6.2.js"></script>
         <script src="Scripts/vendor/angular/angular.js"></script>
-        <script src="Scripts/vendor/ng-grid-1.6.0.debug.js"></script>
         <script src="Scripts/app.js"></script>
         <script src="Scripts/controllers/LFGCtrl.js"></script>
     </body>
