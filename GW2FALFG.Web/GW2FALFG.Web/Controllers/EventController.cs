@@ -20,7 +20,7 @@ namespace GW2FALFG.Web.Controllers
         // GET api/event
         public IEnumerable<Event> Get()
         {
-            return _eventRepository.GetAll();
+            return _eventRepository.GetAll().OrderBy(e => e.EventName).ToList();
         }
 
         // GET api/event/5

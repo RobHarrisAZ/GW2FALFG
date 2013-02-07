@@ -44,9 +44,9 @@ namespace GW2FALFG.Web.Controllers
         }
 
         // PUT api/event/5
-        public void Put(GroupRequest eventItem)
+        public void Put(int id, GroupRequest grpReq)
         {
-            _groupRequestRepository.Update(eventItem);
+            _groupRequestRepository.Update(grpReq);
         }
 
         // DELETE api/event/5
@@ -56,14 +56,11 @@ namespace GW2FALFG.Web.Controllers
             return Request.CreateResponse(HttpStatusCode.NoContent);
         }
 
-        public HttpResponseMessage GetByLanguagePref(string languagePreference)
+        // DELETE api/event/5
+        public HttpResponseMessage Delete()
         {
-            var groupRequests = _groupRequestRepository.GetByLanguage(languagePreference);
-            if (groupRequests == null)
-            {
-                return Request.CreateResponse(HttpStatusCode.NotFound);
-            }
-            return Request.CreateResponse(HttpStatusCode.OK, groupRequests);
+            _groupRequestRepository.PurgeOld();
+            return Request.CreateResponse(HttpStatusCode.NoContent);
         }
 
         public HttpResponseMessage GetByEventName(string eventName)
@@ -76,7 +73,7 @@ namespace GW2FALFG.Web.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, groupRequests);
         }
 
-        public HttpResponseMessage GetByUser(string userGuid)
+        public HttpResponseMessage GetByUser(string userGuid, int q)
         {
             var groupRequests = _groupRequestRepository.GetByUserGuid(userGuid);
             if (groupRequests == null)
@@ -84,11 +81,6 @@ namespace GW2FALFG.Web.Controllers
                 return Request.CreateResponse(HttpStatusCode.NotFound);
             }
             return Request.CreateResponse(HttpStatusCode.OK, groupRequests);
-        }
-
-        public string Index()
-        {
-            return "<html><body><div><strong>Sorry, but you're doing it wrong...<strong></div></body></html>";
         }
     }
 }

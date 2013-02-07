@@ -435,6 +435,9 @@ aside {
     margin: 5px 0 0 10px;
 }
 
+.groupGrid {
+    background-color: rgba(255, 255, 255, .4);
+}
 /* forms */
 fieldset {
     border: none;

@@ -15,6 +15,7 @@ namespace GW2FALFG.Web.Data
         public GroupRequestContext(string connString) : base(connString)
         {
             Configuration.ProxyCreationEnabled = false;
+            Configuration.AutoDetectChangesEnabled = false;
         }
 
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
 
 namespace GW2FALFG.Web.Models
@@ -36,7 +37,7 @@ namespace GW2FALFG.Web.Models
         [Required]
         public DateTime Timestamp { get; set; }
         [Required]
-        [StringLength(16)]
+        [StringLength(40)]
         public string UserGuid { get; set; }
     }
 }

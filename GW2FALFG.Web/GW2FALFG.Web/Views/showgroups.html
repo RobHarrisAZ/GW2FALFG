@@ -1,9 +1,9 @@
 ﻿<div class="row">
-    <div class="span12"><input id="addNew" type="button" class="btn btn-inverse" value="New Group Request"  ng-click="addNew()"/></div>
+    <div class="span12"><input id="addNew" type="button" class="btn btn-inverse" value="New Group Request"  ng-click="addNew()"/><input id="refresh" type="button" class="btn btn-inverse" value="Refresh"  ng-click="refreshGroups()"/></div>
 </div>
 <div class="row">
     <div class="span12">
-        <table id="groupGrid" class="table">
+        <table id="groupGrid" class="table groupGrid">
             <tr>
                 <th>&nbsp;</th>
                 <th>Character</th>
@@ -11,20 +11,23 @@
                 <th>Event Name</th>
                 <th>LFxM</th>
                 <th>Description</th>
+                <th>Posted</th>
                 <th>Language Preference</th>
                 <th>Amt Agony Resist</th>
                 <th>Attributes</th>
             </tr>
-            <tr ng-repeat="groupRequest in groupRequestsAll">
+            <tr ng-repeat="groupRequest in groupRequestsAll" ngClassOdd="table-striped" ng>
                 <!--Template for Grid-->
                 <td ng-bind="groupRequest.groupRequestId" class="hide-text"></td>
+                <td ng-bind="groupRequest.PlayerName"></td>
                 <td ng-bind="groupRequest.Level"></td>
                 <td ng-bind="groupRequest.EventName"></td>
                 <td ng-bind="groupRequest.LookingForNumber"></td>
                 <td ng-bind="groupRequest.Description"></td>
+                <td>{{groupRequest.Timestamp|showelapsed}}</td>
                 <td ng-bind="groupRequest.LanguagePreference"></td>
                 <td ng-bind="groupRequest.AgonyResistRequired"></td>
-                <td><!--Need to write a filter for attributes: FullRunFl, ExperiencedOnlyFl, NewToDungeonFl, SpeedRunFl--></td>
+                <td><span class="{{groupRequest.SpeedRunFl|spshow}}" title="Speed Run"></span><span class="{{groupRequest.FullRunFl|flshow}}" title="Full run no skipping"></span><span class="{{groupRequest.ExperiencedOnlyFl|expshow}}" title="Experienced Players Only"></span><span class="{{groupRequest.NewToDungeonFl|nwshow}}" title="I'm new to this event"></span></td>
             </tr>
         </table>
     </div>

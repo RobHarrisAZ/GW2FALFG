@@ -163,6 +163,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\GroupRequest.cs" />
     <Compile Include="Models\Language.cs" />
@@ -173,6 +174,7 @@
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\eelogo.png" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\images\GW2_Logo_sm.png" />
@@ -186,6 +188,11 @@
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\controllers\LFGCtrl.js" />
     <None Include="Scripts\vendor\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\filters\expshow.js" />
+    <Content Include="Scripts\filters\flshow.js" />
+    <Content Include="Scripts\filters\nwshow.js" />
+    <Content Include="Scripts\filters\spshow.js" />
+    <Content Include="Scripts\filters\timefilter.js" />
     <Content Include="Scripts\vendor\jquery.validate.js" />
     <Content Include="Scripts\vendor\jquery.validate.min.js" />
     <Content Include="Scripts\vendor\angular\angular-bootstrap-prettify.js" />
@@ -406,7 +413,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\directives\" />
-    <Folder Include="Scripts\filters\" />
     <Folder Include="Scripts\services\" />
   </ItemGroup>
   <ItemGroup>

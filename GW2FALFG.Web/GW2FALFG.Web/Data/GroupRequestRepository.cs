@@ -28,7 +28,8 @@ namespace GW2FALFG.Web.Data
 
         public IQueryable<GroupRequest> GetAll()
         {
-            return _db.GroupRequests;
+            var thirtyMinutes = (DateTime.UtcNow).AddMinutes(-30);
+            return _db.GroupRequests.Where(t => t.Timestamp >= thirtyMinutes && t.Timestamp <= DateTime.UtcNow).OrderBy(g => g.EventName).ThenByDescending(t => t.Timestamp);
         }
 
         public GroupRequest Add(GroupRequest grpReq)
@@ -49,6 +50,16 @@ namespace GW2FALFG.Web.Data
         {
             var grpReq = Get(groupRequestId);
             _db.GroupRequests.Remove(grpReq);
+        }
+
+        public void PurgeOld()
+        {
+            var thirtyMinutes = (DateTime.UtcNow).AddMinutes(-30);
+            var requests = _db.GroupRequests.Where(t => t.Timestamp < thirtyMinutes);
+            foreach (var groupRequest in requests)
+            {
+                _db.GroupRequests.Remove(groupRequest);
+            }
         }
 
         public IEnumerable<GroupRequest> GetByEvent(string eventName)

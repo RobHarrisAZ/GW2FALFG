@@ -7,7 +7,9 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.Http.Validation.Providers;
 using GW2FALFG.Web.Data;
+using System.Data.Entity.Migrations;
 
 namespace GW2FALFG.Web
 {
@@ -25,7 +27,11 @@ namespace GW2FALFG.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //Database.SetInitializer(new GroupRequestContextInitializer());
+            GlobalConfiguration.Configuration.Services.RemoveAll(
+                typeof(System.Web.Http.Validation.ModelValidatorProvider),
+                v => v is InvalidModelValidatorProvider);
+            Database.SetInitializer(new GroupRequestContextInitializer());
+            //new DbMigrator(new GroupContextConfiguration()); //migrations
         }
     }
 }

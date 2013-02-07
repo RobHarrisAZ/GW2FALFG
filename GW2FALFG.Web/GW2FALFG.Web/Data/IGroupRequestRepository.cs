@@ -17,5 +17,6 @@ namespace GW2FALFG.Web.Data
         IEnumerable<GroupRequest> GetByEvent(string eventName);
         IEnumerable<GroupRequest> GetByLanguage(string languagePreference);
         IEnumerable<GroupRequest> GetByUserGuid(string userGuid);
+        void PurgeOld();
     }
 }

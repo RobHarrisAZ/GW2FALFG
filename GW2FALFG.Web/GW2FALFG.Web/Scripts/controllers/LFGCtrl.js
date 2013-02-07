@@ -1,8 +1,14 @@
 ﻿LFG.controllers.controller('LFGCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
     var groupRequestId = $routeParams.id,
-        getAllGroupRequests = function() {
-            $http.get('/api/group/').success(function(response) {
+        getAllGroupRequests = function () {
+            console.log('fetching all groups');
+            $http.get('/api/group/', {cache: false}).success(function(response) {
                 $scope.groupRequestsAll = response;
+            });
+        },
+        purgeOldData = function() {
+            console.log('purging old records');
+            $http.delete('/api/group/').success(function(response) {
             });
         },
         getGroupRequestsByEvent = function(event) {
@@ -82,11 +88,16 @@
     if (!$scope.userGuid) {
         $scope.userGuid = createUuid();
         var today = new Date();
-        today.setTime(today.getTime() + 86400);
-        setCookie('userGuid', $scope.userGuid, today.getYear(), today.getMonth(), today.getDate(), '', 'infidelux.net', 'secure');
+        today.setTime((today.getTime()) + 86400);
+        setCookie('userGuid', $scope.userGuid, today.getYear(), today.getMonth(), today.getDate(), '', 'infidelux.net', '');
     }
 
-    $scope.request = {};
+    $scope.request = { 
+        ExperiencedOnlyFl: false,
+        FullRunFl: false,
+        SpeedRunFl: false,
+        NewToDungeonFl: false
+    };
     $scope.viewUrl = 'views/showgroups.html';
 
     if (groupRequestId) {
@@ -111,24 +122,24 @@
         $scope.request.LanguagePreference = 'English';//Default
         $scope.viewUrl = 'views/editgroup.html';
     };
+    $scope.refreshGroups = function() {
+        getAllGroupRequests();
+    };
     $scope.saveGroup = function () {
         $scope.request.Timestamp = new Date();
-        var requestString = 'Request:\r' +
-            '\rID:' + $scope.request.GroupRequestId +
-            '\rAgonyResist:' + $scope.request.AgonyResistRequired +
-            '\rDescription:' + $scope.request.Description +
-            '\rEventName:' + $scope.request.EventName +
-            '\rFullRunFl:' + $scope.request.FullRunFl +
-            '\rExperiencedOnlyFl:' + $scope.request.ExperiencedOnlyFl +
-            '\rLanguagePreference:' + $scope.request.LanguagePreference +
-            '\rLevel:' + $scope.request.Level +
-            '\rLookingForNumber:' + $scope.request.LookingForNumber +
-            '\rNewToDungeonFl:' + $scope.request.NewToDungeonFl +
-            '\rPlayerName:' + $scope.request.PlayerName +
-            '\rSpeedRunFl:' + $scope.request.SpeedRunFl +
-            '\rTimestamp:' + $scope.request.Timestamp +
-            '\rUserGuid:' + $scope.request.UserGuid;
-        alert(requestString);
+        if ($scope.request.GroupRequestId > 0) {
+            $http.put('/api/group/put/?id=' + $scope.request.id, $scope.request).success(function (response) {
+                $scope.viewUrl = 'views/showgroups.html';
+                $scope.refreshGroups();
+            });
+        } else {
+            $http.post('/api/group/post/', $scope.request).success(function(response) {
+                $scope.viewUrl = 'views/showgroups.html';
+                $scope.refreshGroups();
+            });
+        }
     };
 
+    var fetchLoop = setInterval(function () { getAllGroupRequests(); }, 60000);//Refresh every minute-may need to disable this
+    //var purgeLoop = setInterval(function () { purgeOldData(); }, 1800000);//Purge every 30 minutes
 }]);
