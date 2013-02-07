@@ -184,10 +184,8 @@
     <None Include="Scripts\vendor\jquery-1.9.0.intellisense.js" />
     <Content Include="index.html" />
     <Content Include="Scripts\app.js" />
-    <Content Include="Scripts\controllers\AddRequestCtrl.js" />
     <Content Include="Scripts\controllers\LFGCtrl.js" />
     <None Include="Scripts\vendor\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\vendor\jquery.cookie.js" />
     <Content Include="Scripts\vendor\jquery.validate.js" />
     <Content Include="Scripts\vendor\jquery.validate.min.js" />
     <Content Include="Scripts\vendor\angular\angular-bootstrap-prettify.js" />

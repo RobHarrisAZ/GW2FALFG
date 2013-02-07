@@ -87,16 +87,16 @@
     }
 
     $scope.request = {};
-    $scope.viewUrl = '/views/showgroups.html';
+    $scope.viewUrl = 'views/showgroups.html';
 
     if (groupRequestId) {
         getEvents();
         getLanguages();
         getGroupRequestById(groupRequestId);
-        $scope.viewUrl = '/views/editgroup.html';
+        $scope.viewUrl = 'views/editgroup.html';
     } else {
         getAllGroupRequests();
-        $scope.viewUrl = '/views/showgroups.html';
+        $scope.viewUrl = 'views/showgroups.html';
     }
 
     $scope.addNew = function () {
@@ -109,7 +109,7 @@
         $scope.request.GroupRequestId = 0;
         $scope.request.UserGuid = $scope.userGuid;
         $scope.request.LanguagePreference = 'English';//Default
-        $scope.viewUrl = '/views/editgroup.html';
+        $scope.viewUrl = 'views/editgroup.html';
     };
     $scope.saveGroup = function () {
         $scope.request.Timestamp = new Date();
