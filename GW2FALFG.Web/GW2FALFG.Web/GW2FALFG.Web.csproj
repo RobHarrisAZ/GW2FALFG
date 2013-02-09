@@ -170,15 +170,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
+    <Content Include="500.html" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\errors.css" />
     <Content Include="Content\images\eelogo.png" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\images\GW2_Logo_sm.png" />
     <Content Include="Content\images\ValleyofGodsandHeroes.jpg" />
+    <Content Include="Content\images\ValleyRuins.jpg" />
+    <Content Include="Content\images\Zhaitan.jpg" />
     <Content Include="Content\ng-grid.css" />
     <Content Include="Global.asax" />
     <Content Include="favicon.ico" />
@@ -193,6 +198,7 @@
     <Content Include="Scripts\filters\nwshow.js" />
     <Content Include="Scripts\filters\spshow.js" />
     <Content Include="Scripts\filters\timefilter.js" />
+    <Content Include="Scripts\services\CookieService.js" />
     <Content Include="Scripts\vendor\jquery.validate.js" />
     <Content Include="Scripts\vendor\jquery.validate.min.js" />
     <Content Include="Scripts\vendor\angular\angular-bootstrap-prettify.js" />
@@ -395,25 +401,11 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\Site.css" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="Scripts\_references.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\directives\" />
-    <Folder Include="Scripts\services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

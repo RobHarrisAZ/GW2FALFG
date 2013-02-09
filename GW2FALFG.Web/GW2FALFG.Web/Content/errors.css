@@ -1,0 +1,18 @@
+﻿body {
+}
+
+.e404{
+    background-image: url(images/ValleyRuins.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.e500 {
+    background-image: url(images/Zhaitan.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+p {
+    margin-left: 10px;
+}

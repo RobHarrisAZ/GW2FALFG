@@ -13,8 +13,14 @@ namespace GW2FALFG.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Error", action = "Index", id = UrlParameter.Optional }
+            //);
+
             routes.MapRoute(
-                name: "Default",
+                name: "API",
                 url: "api/{controller}/{action}/{id}",
                 defaults: new { controller = "Group", action = "Index", id = UrlParameter.Optional }
             );

@@ -36,6 +36,7 @@ namespace GW2FALFG.Web.Data
         {
             _db.GroupRequests.Add(grpReq);
             _db.SaveChanges();
+            PurgeOld();
             return grpReq;
         }
 

@@ -1,8 +1,8 @@
-﻿LFG.controllers.controller('LFGCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+﻿LFG.controllers.controller('LFGCtrl', ['$scope', '$http', '$routeParams', 'CookieService', function ($scope, $http, $routeParams, CookieService) {
     var groupRequestId = $routeParams.id,
-        getAllGroupRequests = function () {
+        getAllGroupRequests = function() {
             console.log('fetching all groups');
-            $http.get('/api/group/', {cache: false}).success(function(response) {
+            $http.get('/api/group/', { cache: false }).success(function(response) {
                 $scope.groupRequestsAll = response;
             });
         },
@@ -53,43 +53,14 @@
 
             var uuid = s.join("");
             return uuid;
-        },
-        setCookie = function(name, value, expYear, expMonth, expDay, path, domain, secure) {
-            var cookieString = name + "=" + escape(value);
-
-            if (expYear) {
-                var expires = new Date(expYear, expMonth, expDay);
-                cookieString += "; expires=" + expires.toGMTString();
-            }
-
-            if (path)
-                cookieString += "; path=" + escape(path);
-
-            if (domain)
-                cookieString += "; domain=" + escape(domain);
-
-            if (secure)
-                cookieString += "; secure";
-
-            document.cookie = cookieString;
-        },
-        getCookie = function(cookieName) {
-            var results = document.cookie.match('(^|;) ?' + cookieName + '=([^;]*)(;|$)');
-
-            if (results) {
-                return (unescape(results[2]));
-            } else {
-                return null;
-            }
         };
 
     //Handle User ID
-    $scope.userGuid = getCookie('userGuid');
+    $scope.userGuid = CookieService.getCookie('userGuid');
     if (!$scope.userGuid) {
         $scope.userGuid = createUuid();
-        var today = new Date();
-        today.setTime((today.getTime()) + 86400);
-        setCookie('userGuid', $scope.userGuid, today.getYear(), today.getMonth(), today.getDate(), '', 'infidelux.net', '');
+        var expDate = new Date(new Date().getTime() + CookieService.daysToMs(7));
+        CookieService.setCookie('userGuid', $scope.userGuid, expDate);
     }
 
     $scope.request = { 
@@ -135,11 +106,15 @@
         } else {
             $http.post('/api/group/post/', $scope.request).success(function(response) {
                 $scope.viewUrl = 'views/showgroups.html';
-                $scope.refreshGroups();
+                setTimeout(function () { getAllGroupRequests(); }, 1000);
             });
         }
     };
+    $scope.cancelEdit = function() {
+        $scope.viewUrl = 'views/showgroups.html';
+        setTimeout(function () { getAllGroupRequests(); }, 1000);
+    };
 
-    var fetchLoop = setInterval(function () { getAllGroupRequests(); }, 60000);//Refresh every minute-may need to disable this
+    //var fetchLoop = setInterval(function () { getAllGroupRequests(); }, 60000);//Refresh every minute-may need to disable this
     //var purgeLoop = setInterval(function () { purgeOldData(); }, 1800000);//Purge every 30 minutes
 }]);

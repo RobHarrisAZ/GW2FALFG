@@ -14,7 +14,10 @@ body {
     margin: 0;
     padding: 0;
     background-image: url(images/ValleyofGodsandHeroes.jpg);
-    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 98%;
+    overflow: auto;
 }
 
 a {
@@ -48,7 +51,7 @@ header>div {
 
 .content-wrapper {
     min-height:100%;
-    position:relative;
+    /*position:relative;*/
 }
 
 header {
@@ -437,6 +440,9 @@ aside {
 
 .groupGrid {
     background-color: rgba(255, 255, 255, .4);
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 /* forms */
 fieldset {
@@ -459,6 +465,10 @@ fieldset {
         fieldset ol li {
             padding-bottom: 5px;
         }
+
+.btn-group-vertical {
+    padding-right: 10px;
+}
 
 label {
     display: block;
