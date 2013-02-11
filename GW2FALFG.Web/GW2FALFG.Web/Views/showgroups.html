@@ -3,7 +3,7 @@
 </div>
 <div class="row">
     <div class="span12">
-        <table id="groupGrid" class="table groupGrid">
+        <table id="groupGrid" class="table groupGrid table-striped table-bordered table-condensed">
             <tr>
                 <th>&nbsp;</th>
                 <th>Character</th>
@@ -18,7 +18,7 @@
             </tr>
             <tr ng-repeat="groupRequest in groupRequestsAll" ngClassOdd="table-striped">
                 <!--Template for Grid-->
-                <td><a href="#" ng-click="editGroup(groupRequest)" class="btn btn-inverse" editlink data-user="{{groupRequest.UserGuid}}" data-id="{{groupRequest.GroupRequestId}}"/>Edit</a></td>
+                <td><a href="#" ng-click="editGroup(groupRequest)" class="btn btn-inverse" editlink data-user="{{groupRequest.UserGuid}}" data-id="{{groupRequest.GroupRequestId}}">Edit</a></td>
                 <td data-ng-bind="groupRequest.PlayerName"></td>
                 <td data-ng-bind="groupRequest.Level"></td>
                 <td data-ng-bind="groupRequest.EventName"></td>
