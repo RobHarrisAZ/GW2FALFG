@@ -193,6 +193,7 @@
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\controllers\LFGCtrl.js" />
     <None Include="Scripts\vendor\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\directives\editableDir.js" />
     <Content Include="Scripts\filters\expshow.js" />
     <Content Include="Scripts\filters\flshow.js" />
     <Content Include="Scripts\filters\nwshow.js" />
@@ -405,7 +406,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\directives\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

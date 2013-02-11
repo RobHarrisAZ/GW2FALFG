@@ -1,5 +1,5 @@
 ﻿<div class="row">
-    <div class="span12"><input id="addNew" type="button" class="btn btn-inverse" value="New Group Request"  ng-click="addNew()"/><input id="refresh" type="button" class="btn btn-inverse" value="Refresh"  ng-click="refreshGroups()"/></div>
+    <div class="span12"><a href="#" id="addNew" class="btn btn-inverse" ng-click="addNew()">New Group Request</a><a href="#" id="refresh" class="btn btn-inverse" ng-click="refreshGroups()">Refresh</a></div>
 </div>
 <div class="row">
     <div class="span12">
@@ -16,18 +16,23 @@
                 <th>Amt Agony Resist</th>
                 <th>Attributes</th>
             </tr>
-            <tr ng-repeat="groupRequest in groupRequestsAll" ngClassOdd="table-striped" ng>
+            <tr ng-repeat="groupRequest in groupRequestsAll" ngClassOdd="table-striped">
                 <!--Template for Grid-->
-                <td ng-bind="groupRequest.groupRequestId" class="hide-text"></td>
-                <td ng-bind="groupRequest.PlayerName"></td>
-                <td ng-bind="groupRequest.Level"></td>
-                <td ng-bind="groupRequest.EventName"></td>
-                <td ng-bind="groupRequest.LookingForNumber"></td>
-                <td ng-bind="groupRequest.Description"></td>
+                <td><a href="#" ng-click="editGroup(groupRequest)" class="btn btn-inverse" editlink data-user="{{groupRequest.UserGuid}}" data-id="{{groupRequest.GroupRequestId}}"/>Edit</a></td>
+                <td data-ng-bind="groupRequest.PlayerName"></td>
+                <td data-ng-bind="groupRequest.Level"></td>
+                <td data-ng-bind="groupRequest.EventName"></td>
+                <td data-ng-bind="groupRequest.LookingForNumber"></td>
+                <td data-ng-bind="groupRequest.Description"></td>
                 <td>{{groupRequest.Timestamp|showelapsed}}</td>
-                <td ng-bind="groupRequest.LanguagePreference"></td>
-                <td ng-bind="groupRequest.AgonyResistRequired"></td>
-                <td><span class="{{groupRequest.SpeedRunFl|spshow}}" title="Speed Run"></span><span class="{{groupRequest.FullRunFl|flshow}}" title="Full run no skipping"></span><span class="{{groupRequest.ExperiencedOnlyFl|expshow}}" title="Experienced Players Only"></span><span class="{{groupRequest.NewToDungeonFl|nwshow}}" title="I'm new to this event"></span></td>
+                <td data-ng-bind="groupRequest.LanguagePreference"></td>
+                <td data-ng-bind="groupRequest.AgonyResistRequired"></td>
+                <td>
+                    <span class="{{groupRequest.SpeedRunFl|spshow}}" title="Speed Run"></span>
+                    <span class="{{groupRequest.FullRunFl|flshow}}" title="Full run no skipping"></span>
+                    <span class="{{groupRequest.ExperiencedOnlyFl|expshow}}" title="Experienced Players Only"></span>
+                    <span class="{{groupRequest.NewToDungeonFl|nwshow}}" title="I'm new to this event"></span>
+                </td>
             </tr>
         </table>
     </div>

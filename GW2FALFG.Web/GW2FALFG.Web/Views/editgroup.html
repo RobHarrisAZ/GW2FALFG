@@ -24,16 +24,16 @@
                 <div>
                     <label>Attributes</label>
                     <div>
-                        <input id="fullRun" type="checkbox" ng-model="request.FullRunFl" class="groupInput" ng-true-value="true" ng-false-value="false" /> Full Run (No Skipping content)<br>
-                        <input id="speedRun" type="checkbox" ng-model="request.SpeedRunFl" class="groupInput" ng-true-value="true" ng-false-value="false"/> Speed Run (Will be skipping some content)<br><br>
-                        <input id="experienced" type="checkbox" ng-model="request.ExperiencedOnlyFl" class="groupInput" ng-true-value="true" ng-false-value="false"/> Experienced players only<br><br>
-                        <input id="newbie" type="checkbox" ng-model="request.NewToDungeonFl" class="groupInput" ng-true-value="true" ng-false-value="false"/> I'm new to this content (be gentle)
+                        <input id="fullRun" type="checkbox" ng-checked="request.FullRunFl" ng-model="request.FullRunFl" class="groupInput" ng-true-value="true" ng-false-value="false" /> Full Run (No Skipping content)<br>
+                        <input id="speedRun" type="checkbox" ng-checked="request.SpeedRunFl" ng-model="request.SpeedRunFl" class="groupInput" ng-true-value="true" ng-false-value="false"/> Speed Run (Will be skipping some content)<br><br>
+                        <input id="experienced" type="checkbox" ng-checked="request.ExperiencedOnlyFl" ng-model="request.ExperiencedOnlyFl" class="groupInput" ng-true-value="true" ng-false-value="false"/> Experienced players only<br><br>
+                        <input id="newbie" type="checkbox" ng-checked="request.NewToDungeonFl" ng-model="request.NewToDungeonFl" class="groupInput" ng-true-value="true" ng-false-value="false"/> I'm new to this content (be gentle)
                     </div>
                 </div>
             </div>
             <div class="span4 float-right btn-group-vertical pill-content">
-                <input id="save" class="btn btn-inverse" value="Save" ng-click="saveGroup()"/>&nbsp;
-                <input id="cancel" class="btn btn-inverse" value="Cancel" ng-click="cancelEdit()"/>
+                <a id="save" class="btn btn-inverse" href="#" ng-click="saveGroup()">Save</a>&nbsp;
+                <a id="cancel" class="btn btn-inverse" href="#" ng-click="cancelEdit()">Cancel</a>
             </div>
         </fieldset>
     </form>

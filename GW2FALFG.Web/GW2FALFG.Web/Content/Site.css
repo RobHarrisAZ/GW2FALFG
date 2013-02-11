@@ -21,16 +21,16 @@ body {
 }
 
 a {
-    color: #333;
+    color: #fff;
     outline: none;
     padding-left: 3px;
     padding-right: 3px;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
     a:link, a:visited,
     a:active, a:hover {
-        color: #333;
+        color: #fff;
     }
 
     a:hover {

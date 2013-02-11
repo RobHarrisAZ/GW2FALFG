@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Web;
@@ -28,8 +29,8 @@ namespace GW2FALFG.Web.Data
 
         public IQueryable<GroupRequest> GetAll()
         {
-            var thirtyMinutes = (DateTime.UtcNow).AddMinutes(-30);
-            return _db.GroupRequests.Where(t => t.Timestamp >= thirtyMinutes && t.Timestamp <= DateTime.UtcNow).OrderBy(g => g.EventName).ThenByDescending(t => t.Timestamp);
+            var elapsed = (DateTime.UtcNow).AddMinutes(Convert.ToInt32(ConfigurationManager.AppSettings["Elapsed"]));
+            return _db.GroupRequests.Where(t => t.Timestamp >= elapsed && t.Timestamp <= DateTime.UtcNow).OrderBy(g => g.EventName).ThenByDescending(t => t.Timestamp);
         }
 
         public GroupRequest Add(GroupRequest grpReq)

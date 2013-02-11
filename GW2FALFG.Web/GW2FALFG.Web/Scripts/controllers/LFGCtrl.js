@@ -39,6 +39,15 @@
         getGroupRequestById = function(id) {
             $http.get('/api/group/' + id).success(function(response) {
                 $scope.request = response;
+                if ($scope.request.UserGuid === CookieService.getCookie('userGuid')) {
+                    if (!$scope.events) {
+                        getEvents();
+                    }
+                    if (!$scope.languages) {
+                        getLanguages();
+                    }
+                    $scope.viewUrl = 'views/editgroup.html';
+                }
             });
         },
         createUuid = function() {
@@ -53,6 +62,16 @@
 
             var uuid = s.join("");
             return uuid;
+        },
+        initRequest = function() {
+            $scope.request = {
+                GroupRequestId: 0,
+                LanguagePreference: 'English',
+                ExperiencedOnlyFl: false,
+                FullRunFl: false,
+                SpeedRunFl: false,
+                NewToDungeonFl: false
+            };
         };
 
     //Handle User ID
@@ -63,12 +82,6 @@
         CookieService.setCookie('userGuid', $scope.userGuid, expDate);
     }
 
-    $scope.request = { 
-        ExperiencedOnlyFl: false,
-        FullRunFl: false,
-        SpeedRunFl: false,
-        NewToDungeonFl: false
-    };
     $scope.viewUrl = 'views/showgroups.html';
 
     if (groupRequestId) {
@@ -82,26 +95,28 @@
     }
 
     $scope.addNew = function () {
+        initRequest();
         if (!$scope.events) {
             getEvents();
         }
         if (!$scope.languages) {
             getLanguages();
         }
-        $scope.request.GroupRequestId = 0;
         $scope.request.UserGuid = $scope.userGuid;
-        $scope.request.LanguagePreference = 'English';//Default
         $scope.viewUrl = 'views/editgroup.html';
     };
-    $scope.refreshGroups = function() {
+    $scope.editGroup = function( request ) {
+        getGroupRequestById(request.GroupRequestId);
+    };
+    $scope.refreshGroups = function () {
         getAllGroupRequests();
     };
     $scope.saveGroup = function () {
         $scope.request.Timestamp = new Date();
         if ($scope.request.GroupRequestId > 0) {
-            $http.put('/api/group/put/?id=' + $scope.request.id, $scope.request).success(function (response) {
+            $http.put('/api/group/put/?id=' + $scope.request.GroupRequestId, $scope.request).success(function (response) {
                 $scope.viewUrl = 'views/showgroups.html';
-                $scope.refreshGroups();
+                setTimeout(function () { getAllGroupRequests(); }, 1000);
             });
         } else {
             $http.post('/api/group/post/', $scope.request).success(function(response) {
