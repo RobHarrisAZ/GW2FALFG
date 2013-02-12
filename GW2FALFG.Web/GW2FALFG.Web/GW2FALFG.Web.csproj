@@ -188,7 +188,10 @@
     <Content Include="Global.asax" />
     <Content Include="favicon.ico" />
     <None Include="Properties\PublishProfiles\WinHost Infidelux.pubxml" />
-    <None Include="Scripts\vendor\jquery-1.9.0.intellisense.js" />
+    <None Include="Scripts\vendor\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\vendor\jquery-1.9.1.js" />
+    <Content Include="Scripts\vendor\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\vendor\jquery-1.9.1.min.map" />
     <Content Include="index.html" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\controllers\LFGCtrl.js" />
@@ -375,9 +378,6 @@
     <Content Include="Scripts\vendor\angular\i18n\angular-locale_zh-hk.js" />
     <Content Include="Scripts\vendor\angular\i18n\angular-locale_zh-tw.js" />
     <Content Include="Scripts\vendor\angular\i18n\angular-locale_zh.js" />
-    <Content Include="Scripts\vendor\jquery-1.9.0.js" />
-    <Content Include="Scripts\vendor\jquery-1.9.0.min.js" />
-    <Content Include="Scripts\vendor\jquery-1.9.0.min.map" />
     <Content Include="Scripts\vendor\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\vendor\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\vendor\jquery.validate.unobtrusive.js" />

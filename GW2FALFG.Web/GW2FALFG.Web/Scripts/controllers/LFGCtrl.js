@@ -106,7 +106,7 @@
         $scope.viewUrl = 'views/editgroup.html';
     };
     $scope.editGroup = function( request ) {
-        getGroupRequestById(request.GroupRequestId);
+        getGroupRequestById(request.getProperty('GroupRequestId'));
     };
     $scope.refreshGroups = function () {
         getAllGroupRequests();
@@ -129,6 +129,44 @@
         $scope.viewUrl = 'views/showgroups.html';
         setTimeout(function () { getAllGroupRequests(); }, 1000);
     };
+
+    $scope.gridOptions = {
+        displaySelectionCheckbox: false,
+        displayFooter: false,
+        data: 'groupRequestsAll',
+        columnDefs: [
+            { field: 'GroupRequestId', displayName: ' ', cellTemplate: '<div ng-class="ngCell input-mini"><a href="#" ng-click="editGroup(row)" class="btn btn-inverse" editlink>Edit</a></div>' },
+            { field: 'PlayerName', displayName: 'Player Name' },
+            { field: 'Level', displayName: 'Level', cellClass: 'input-mini' },
+            { field: 'EventName', displayName: 'Event', cellClass: 'input-xlarge' },
+            { field: 'LookingForNumber', displayName: 'LFxM', cellClass: 'input-mini' },
+            { field: 'Description', displayName: 'Description' },
+            { field: 'Timestamp', displayName: 'Elapsed', cellTemplate: '<div ng-class="ngCellText"><span ng-cell-text>{{row.getProperty(\'Timestamp\')|showelapsed}}</span></div>' },
+            { field: 'LanguagePreference', displayName: 'Language' },
+            { field: 'AgonyResistRequired', displayName: 'Agony Resist' },
+            { field: 'SpeedRunFl', displayName: 'Attributes', cellTemplate: '<div ng-class="ngCellText">' +
+                '<span class="{{row.getProperty(\'SpeedRunFl\')|spshow}}" title="Speed Run"></span>' +
+                '<span class="{{row.getProperty(\'FullRunFl\')|flshow}}" title="Full run no skipping"></span>' +
+                '<span class="{{row.getProperty(\'ExperiencedOnlyFl\')|expshow}}" title="Experienced Players Only"></span>' +
+                '<span class="{{row.getProperty(\'NewToDungeonFl\')|nwshow}}" title="I\'m new to this event"></span></div>'
+            },
+        ],
+    };
+    //<td><a href="#" ng-click="editGroup(groupRequest)" class="btn btn-inverse" editlink data-user="{{groupRequest.UserGuid}}" data-id="{{groupRequest.GroupRequestId}}">Edit</a></td>
+    //<td data-ng-bind="groupRequest.PlayerName"></td>
+    //<td data-ng-bind="groupRequest.Level"></td>
+    //<td data-ng-bind="groupRequest.EventName"></td>
+    //<td data-ng-bind="groupRequest.LookingForNumber"></td>
+    //<td data-ng-bind="groupRequest.Description"></td>
+    //<td>{{groupRequest.Timestamp|showelapsed}}</td>
+    //<td data-ng-bind="groupRequest.LanguagePreference"></td>
+    //<td data-ng-bind="groupRequest.AgonyResistRequired"></td>
+    //<td>
+    //<span class="{{groupRequest.SpeedRunFl|spshow}}" title="Speed Run"></span>
+    //<span class="{{groupRequest.FullRunFl|flshow}}" title="Full run no skipping"></span>
+    //<span class="{{groupRequest.ExperiencedOnlyFl|expshow}}" title="Experienced Players Only"></span>
+    //<span class="{{groupRequest.NewToDungeonFl|nwshow}}" title="I'm new to this event"></span>
+    //</td>
 
     //var fetchLoop = setInterval(function () { getAllGroupRequests(); }, 60000);//Refresh every minute-may need to disable this
     //var purgeLoop = setInterval(function () { purgeOldData(); }, 1800000);//Purge every 30 minutes
