@@ -458,6 +458,7 @@ fieldset {
     background-color: rgba(255, 255, 255, .3);
     /*background-color: #fff;*/
     width: 100%;
+    clear: both;
 }
 
     fieldset legend {
