@@ -189,6 +189,7 @@
     <Content Include="favicon.ico" />
     <None Include="Properties\PublishProfiles\WinHost Infidelux.pubxml" />
     <None Include="Scripts\vendor\jquery-1.9.1.intellisense.js" />
+    <Content Include="ReadMe.txt" />
     <Content Include="Scripts\vendor\jquery-1.9.1.js" />
     <Content Include="Scripts\vendor\jquery-1.9.1.min.js" />
     <Content Include="Scripts\vendor\jquery-1.9.1.min.map" />
