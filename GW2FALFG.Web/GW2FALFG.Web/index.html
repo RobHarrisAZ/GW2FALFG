@@ -7,7 +7,7 @@
     <link href="Content/bootstrap-responsive.css" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
 </head>
-    <body ng-app="LFG">
+    <body data-ng-app="LFG">
         <div class="content-wrapper">
             <header>
                 <div class="float-left"><img src="Content/images/eelogo.png" alt="Evils Empire"/></div>
@@ -15,8 +15,8 @@
                 <div><img src="Content/images/GW2_Logo_sm.png" alt="Guild Wars 2" /></div>
             </header>
             <br>
-            <div class="main-content" ng-controller="LFGCtrl">
-                <div ng-include src="viewUrl"></div>
+            <div class="main-content" data-ng-controller="LFGCtrl">
+                <div data-ng-include src="viewUrl"></div>
             </div>
             <footer>&copy; 2013 Infidelux</footer>
         </div>

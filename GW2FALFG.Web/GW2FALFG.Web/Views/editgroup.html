@@ -3,37 +3,37 @@
         <fieldset>
             <div class="span4">
                 <label>Character Name *</label>
-                <input id="characterName" type="text" ng-model="request.PlayerName" class="input-medium" maxlength="64" required placeholder="Enter Character Name">
+                <input id="characterName" type="text" data-ng-model="request.PlayerName" class="input-medium" maxlength="64" required placeholder="Enter Character Name">
                 <label>Experience Level</label>
-                <input id="level" type="number" ng-model="request.Level" class="input-mini" min="1" max="80"/>
+                <input id="level" type="number" data-ng-model="request.Level" class="input-mini" min="1" max="80"/>
                 <label>Event</label>
-                <select id="event" ng-model="request.EventName" required ng-options="e.EventName as e.EventName for (EventName, e) in events" class="input-xlarge">
+                <select id="event" data-ng-model="request.EventName" required data-ng-options="e.EventName as e.EventName for (EventName, e) in events" class="input-xlarge">
                     <option value="">--Select an Event--</option>
                 </select>
                 <label>Looking for</label>
-                <input id="lfm" type="number" ng-model="request.LookingForNumber" class="input-mini" min="1" max="4"/>
+                <input id="lfm" type="number" data-ng-model="request.LookingForNumber" class="input-mini" min="1" max="4"/>
                 <label>Description</label>
-                <textarea id="description" ng-model="request.Description" class="" maxlength="255" cols="40" rows="5"/>
+                <textarea id="description" data-ng-model="request.Description" class="" maxlength="255" cols="40" rows="5"/>
             </div>
             <div class="span4 float-left">
                 <label>Language Preference *</label>
-                <select id="language" ng-model="request.LanguagePreference" class="dropdown" required ng-options="l.LanguagePreference as l.LanguagePreference for (LanguagePreference , l) in languages">
+                <select id="language" data-ng-model="request.LanguagePreference" class="dropdown" required data-ng-options="l.LanguagePreference as l.LanguagePreference for (LanguagePreference , l) in languages">
                 </select>
                 <label>Amount of Agony Resist Req.</label>
-                <input id="agony" type="number" ng-model="request.AgonyResistRequired" class="input-small" min="1" max="30"/>
+                <input id="agony" type="number" data-ng-model="request.AgonyResistRequired" class="input-small" min="1" max="30"/>
                 <div>
                     <label>Attributes</label>
                     <div>
-                        <input id="fullRun" type="checkbox" ng-checked="request.FullRunFl" ng-model="request.FullRunFl" class="groupInput" ng-true-value="true" ng-false-value="false" /> Full Run (No Skipping content)<br>
-                        <input id="speedRun" type="checkbox" ng-checked="request.SpeedRunFl" ng-model="request.SpeedRunFl" class="groupInput" ng-true-value="true" ng-false-value="false"/> Speed Run (Will be skipping some content)<br><br>
-                        <input id="experienced" type="checkbox" ng-checked="request.ExperiencedOnlyFl" ng-model="request.ExperiencedOnlyFl" class="groupInput" ng-true-value="true" ng-false-value="false"/> Experienced players only<br><br>
-                        <input id="newbie" type="checkbox" ng-checked="request.NewToDungeonFl" ng-model="request.NewToDungeonFl" class="groupInput" ng-true-value="true" ng-false-value="false"/> I'm new to this content (be gentle)
+                        <input id="fullRun" type="checkbox" data-ng-checked="request.FullRunFl" data-ng-model="request.FullRunFl" class="groupInput" data-ng-true-value="true" data-ng-false-value="false" /> Full Run (No Skipping content)<br>
+                        <input id="speedRun" type="checkbox" data-ng-checked="request.SpeedRunFl" data-ng-model="request.SpeedRunFl" class="groupInput" data-ng-true-value="true" data-ng-false-value="false"/> Speed Run (Will be skipping some content)<br><br>
+                        <input id="experienced" type="checkbox" data-ng-checked="request.ExperiencedOnlyFl" data-ng-model="request.ExperiencedOnlyFl" class="groupInput" data-ng-true-value="true" data-ng-false-value="false"/> Experienced players only<br><br>
+                        <input id="newbie" type="checkbox" data-ng-checked="request.NewToDungeonFl" data-ng-model="request.NewToDungeonFl" class="groupInput" data-ng-true-value="true" data-ng-false-value="false"/> I'm new to this content (be gentle)
                     </div>
                 </div>
             </div>
             <div class="span4 float-right btn-group-vertical pill-content">
-                <a id="save" class="btn btn-inverse" href="#" ng-click="saveGroup()">Save</a>&nbsp;
-                <a id="cancel" class="btn btn-inverse" href="#" ng-click="cancelEdit()">Cancel</a>
+                <a id="save" class="btn btn-inverse" href="#" data-ng-click="saveGroup()">Save</a>&nbsp;
+                <a id="cancel" class="btn btn-inverse" href="#" data-ng-click="cancelEdit()">Cancel</a>
             </div>
         </fieldset>
     </form>

@@ -5,7 +5,6 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using GW2FALFG.Web.Models;
-using System.Configuration;
 
 namespace GW2FALFG.Web.Data
 {
