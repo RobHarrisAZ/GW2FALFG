@@ -62,6 +62,7 @@ local.properties
 *.vspscc
 .builds
 *.dotCover
+Web.Release.config
 
 ## TODO: If you have NuGet Package Restore enabled, uncomment this
 #packages/
@@ -106,7 +107,6 @@ ClientBin
 stylecop.*
 ~$*
 *.dbmdl
-*.config
 Generated_Code #added for RIA/Silverlight projects
 
 # Backup & report files from converting an old project file to a newer
