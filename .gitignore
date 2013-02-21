@@ -164,3 +164,4 @@ pip-log.txt
 .DS_Store
 
 GW2FALFG.Web/GW2FALFG.Web/Web.Release.config
+GW2FALFG.Web\GW2FALFG.Web\Properties\PublishProfiles*/
