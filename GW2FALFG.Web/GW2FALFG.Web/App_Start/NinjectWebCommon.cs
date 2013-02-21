@@ -59,6 +59,8 @@ namespace GW2FALFG.Web.App_Start
             kernel.Bind<IEventRepository>().To<EventRepository>();
             kernel.Bind<ILanguagePreferenceRepository>().To<LanguagePreferenceRepository>();
             kernel.Bind<IGroupRequestRepository>().To<GroupRequestRepository>();
+            kernel.Bind<IUserRepository>().To<UserRepository>();
+            kernel.Bind<ICharacterClassRepository>().To<CharacterClassRepository>();
             GlobalConfiguration.Configuration.DependencyResolver = new NinjectResolver(kernel);
         }        
     }

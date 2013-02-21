@@ -149,17 +149,30 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CharacterClassController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
-    <Compile Include="Data\EventRepository.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Data\Abstract\ICharacterClassRepository.cs" />
+    <Compile Include="Data\MigrationsContextFactory.cs" />
+    <Compile Include="Migrations\201302210556460_ChangeToPVPFocus.cs" />
+    <Compile Include="Migrations\201302210556460_ChangeToPVPFocus.Designer.cs">
+      <DependentUpon>201302210556460_ChangeToPVPFocus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CharacterClass.cs" />
+    <Compile Include="Data\Repositories\CharacterClassRepository.cs" />
+    <Compile Include="Data\Repositories\EventRepository.cs" />
     <Compile Include="Data\GroupRequestContext.cs" />
     <Compile Include="Data\GroupRequestContextInitializer.cs" />
-    <Compile Include="Data\GroupRequestRepository.cs" />
-    <Compile Include="Data\IEventRepository.cs" />
-    <Compile Include="Data\IGroupRequestRepository.cs" />
-    <Compile Include="Data\ILanguagePreferenceRepository.cs" />
-    <Compile Include="Data\LanguagePreferenceRepository.cs" />
+    <Compile Include="Data\Repositories\GroupRequestRepository.cs" />
+    <Compile Include="Data\Abstract\IEventRepository.cs" />
+    <Compile Include="Data\Abstract\IGroupRequestRepository.cs" />
+    <Compile Include="Data\Abstract\ILanguagePreferenceRepository.cs" />
+    <Compile Include="Data\Abstract\IUserRepository.cs" />
+    <Compile Include="Data\Repositories\LanguagePreferenceRepository.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Data\Repositories\UserRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -190,6 +203,7 @@
     <None Include="Properties\PublishProfiles\WinHost Infidelux.pubxml" />
     <None Include="Scripts\vendor\jquery-1.9.1.intellisense.js" />
     <Content Include="ReadMe.txt" />
+    <Content Include="Scripts\services\EncryptionService.js" />
     <Content Include="Scripts\vendor\jquery-1.9.1.js" />
     <Content Include="Scripts\vendor\jquery-1.9.1.min.js" />
     <Content Include="Scripts\vendor\jquery-1.9.1.min.map" />
@@ -390,7 +404,9 @@
     <Content Include="Scripts\vendor\ng-grid-1.6.0.debug.js" />
     <Content Include="Scripts\vendor\ng-grid-1.6.0.int.js" />
     <Content Include="Scripts\vendor\ng-grid-1.6.0.js" />
+    <Content Include="Views\admin.html" />
     <Content Include="Views\editgroup.html" />
+    <Content Include="Views\editGroupOld.html" />
     <Content Include="Views\showgroups.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -410,6 +426,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201302210556460_ChangeToPVPFocus.resx">
+      <DependentUpon>201302210556460_ChangeToPVPFocus.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

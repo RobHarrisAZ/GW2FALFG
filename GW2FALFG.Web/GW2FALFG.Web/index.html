@@ -1,21 +1,21 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Guild Wars 2 Fort Aspenwood LFG Tool</title>
+    <title>Guild Wars 2 Fort Aspenwood WvW LFG Tool</title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/ng-grid.css" rel="stylesheet" />
     <link href="Content/bootstrap-responsive.css" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
 </head>
     <body data-ng-app="LFG">
-        <div class="content-wrapper">
+        <div class="content-wrapper" data-ng-controller="LFGCtrl">
             <header>
                 <div class="float-left"><img src="Content/images/eelogo.png" alt="Evils Empire"/></div>
-                <h1>Evils Empire Presents LFG for Fort Aspenwood</h1> 
+                <h1>Evils Empire Presents WvW LFG for Fort Aspenwood</h1> 
                 <div><img src="Content/images/GW2_Logo_sm.png" alt="Guild Wars 2" /></div>
             </header>
             <br>
-            <div class="main-content" data-ng-controller="LFGCtrl">
+            <div class="main-content">
                 <div data-ng-include src="viewUrl"></div>
             </div>
             <footer>&copy; 2013 Infidelux</footer>

@@ -1,0 +1,30 @@
+﻿<div class="span12">
+    <div class="span12">
+        <div class="float-right span1">
+            <button id="cancelAdmin" data-ng-click="cancelEdit()" class="btn btn-inverse">Cancel</button>
+        </div>
+    </div>
+    <div class="span12">
+        <div class="float-left span4">
+            <label>Events</label>
+            <div class="input-append">
+                <input id="newEvent" type="text" data-ng-model="newEventName" class="input-xlarge"/><button type="button" id="addNewEvent" data-ng-click="addNewEvent()" class="btn btn-inverse">+</button><br/>
+            </div>
+            <select id="events" size="10" multiple="multiple" data-ng-model="newEventName" class="input-xlarge" data-ng-options="e.EventName as e.EventName for (EventName, e) in events"></select><br/>
+        </div>
+        <div class="float-left span4">
+            <label>Classes</label>
+            <div class="input-append">
+                <input id="newCharacterClass" type="text" data-ng-model="newCharacterClassName" class="input-xlarge"/><button type="button" id="addNewCharacterClass" data-ng-click="addNewCharacterClass()" class="btn btn-inverse">+</button><br/>
+            </div>
+            <select id="characterClasses" size="10" multiple="multiple" data-ng-model="newCharacterClassName" class="dropdown input-xlarge" data-ng-options="c.CharacterClassName as c.CharacterClassName for (CharacterClassName , c) in classes"></select><br/>
+        </div>
+        <div class="float-left span3">
+            <label>Languages</label>
+            <div class="input-append">
+                <input id="newLanguage" type="text" data-ng-model="newLanguageName" class="input-large"/><button type="button" id="addNewLanguage" data-ng-click="addNewLanguage()" class="btn btn-inverse">+</button><br/>
+            </div>
+            <select id="languages" size="10" multiple="multiple" data-ng-model="newLanguageName" class="dropdown input-large" data-ng-options="l.LanguagePreference as l.LanguagePreference for (LanguagePreference, l) in languages"></select><br/>
+        </div>
+    </div>
+</div>

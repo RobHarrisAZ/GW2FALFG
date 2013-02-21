@@ -5,6 +5,7 @@ LFG.controllers = angular.module('LFGCtrl', ['ngGrid']);
 LFG.directives = angular.module('LFGDir', []);
 LFG.filters = angular.module('LFGFilters', []);
 LFG.services = angular.module('LFGServices', []);
+
 $(document).ready({
     
 });

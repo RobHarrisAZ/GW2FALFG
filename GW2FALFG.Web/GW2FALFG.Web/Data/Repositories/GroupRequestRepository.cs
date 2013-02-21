@@ -68,11 +68,6 @@ namespace GW2FALFG.Web.Data
             return _db.GroupRequests.Where(e => e.EventName == eventName);
         }
 
-        public IEnumerable<GroupRequest> GetByLanguage(string languagePreference)
-        {
-            return _db.GroupRequests.Where(l => l.LanguagePreference == languagePreference);
-        }
-
         public IEnumerable<GroupRequest> GetByUserGuid(string userGuid)
         {
             return _db.GroupRequests.Where(l => l.UserGuid == userGuid);
