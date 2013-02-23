@@ -1,21 +1,27 @@
 ﻿<div class="row span12">
     <form id="groupForm">
         <fieldset>
-            <div class="span8">
+            <div class="span5">
                 <label>Character Name *</label>
                 <input id="characterName" type="text" data-ng-model="request.PlayerName" class="input-medium" maxlength="64" required placeholder="Enter Character Name">
                 <label>Class *</label>
-                <select id="characterClass" data-ng-model="request.CharacterClassName" class="dropdown" required data-ng-options="c.CharacterClassName as c.CharacterClassName for (CharacterClassName , c) in classes">
+                <select id="characterClass" data-ng-model="request.CharacterClassId" class="dropdown" required data-ng-options="c.CharacterClassId as c.CharacterClassName for c in classes">
                     <option value="">--Select a Class--</option>
                 </select>
                 <label>Level</label>
                 <input id="level" type="number" data-ng-model="request.Level" class="input-mini" min="1" max="80"/>
                 <label>Event *</label>
-                <select id="event" data-ng-model="request.EventName" required data-ng-options="e.EventName as e.EventName for (EventName, e) in events" class="input-xlarge">
+                <select id="event" data-ng-model="request.EventId" required data-ng-options="e.EventId as e.EventName for e in events" class="input-xlarge">
                     <option value="">--Select an Event--</option>
                 </select>
                 <label>Description</label>
                 <textarea id="description" data-ng-model="request.Description" class="" maxlength="255" cols="40" rows="5"/>
+            </div>
+            <div class="span3">
+                <label>Voice Chat</label>
+                <ul class="voiceImageDisplay">
+                    <li data-ng-repeat="voiceChat in newVoiceChats"><span><img class="voiceImages" ng-src="{{voiceChat.LogoImageUrl}}" alt="{{voiceChat.VoiceChatName}}" title="{{voiceChat.VoiceChatName}}"/><input id="{{voiceChat.VoiceChatName}}" type="checkbox" data-ng-model="voiceChat.checked" value="{{voiceChat.VoiceChatId}}" checked="{{voiceChat.checked}}" data-ng-true-value="checked" data-ng-false-value=""/></span><br/></li>
+                </ul>
             </div>
             <div class="span3 float-right">
                 <button id="save" class="btn btn-inverse float-right" data-ng-click="saveGroup()">Save</button><button id="cancel" class="btn btn-inverse float-right" data-ng-click="cancelEdit()">Cancel</button>

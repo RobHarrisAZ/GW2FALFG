@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Http;
@@ -12,6 +13,7 @@ using System.Web.Routing;
 using System.Web.Http.Validation.Providers;
 using GW2FALFG.Web.Data;
 using System.Data.Entity.Migrations;
+using Newtonsoft.Json;
 
 namespace GW2FALFG.Web
 {
@@ -46,8 +48,7 @@ namespace GW2FALFG.Web
                     throw new ArgumentOutOfRangeException();
             }
 
-            GlobalConfiguration.Configuration.IncludeErrorDetailPolicy = errorDetailPolicy;
-
+            GlobalConfiguration.Configuration.IncludeErrorDetailPolicy = errorDetailPolicy;           
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

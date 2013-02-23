@@ -14,6 +14,8 @@ namespace GW2FALFG.Web.Data
         public DbSet<GroupRequest> GroupRequests { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<CharacterClass> CharacterClasses { get; set; }
+        public DbSet<GroupVoiceChat> GroupVoiceChats { get; set; }
+        public DbSet<VoiceChat> VoiceChats { get; set; }
         public GroupRequestContext(string connString)
             : base(connString)
         {

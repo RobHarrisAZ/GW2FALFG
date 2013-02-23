@@ -20,11 +20,11 @@
             <select id="characterClasses" size="10" multiple="multiple" data-ng-model="newCharacterClassName" class="dropdown input-xlarge" data-ng-options="c.CharacterClassName as c.CharacterClassName for (CharacterClassName , c) in classes"></select><br/>
         </div>
         <div class="float-left span3">
-            <label>Languages</label>
+            <label>Voice Chat Apps</label>
             <div class="input-append">
-                <input id="newLanguage" type="text" data-ng-model="newLanguageName" class="input-large"/><button type="button" id="addNewLanguage" data-ng-click="addNewLanguage()" class="btn btn-inverse">+</button><br/>
+                <input id="newLanguage" type="text" data-ng-model="newVoiceChat" class="input-large"/><button type="button" id="addNewVoiceChat" data-ng-click="addNewVoiceChat()" class="btn btn-inverse">+</button><br/>
             </div>
-            <select id="languages" size="10" multiple="multiple" data-ng-model="newLanguageName" class="dropdown input-large" data-ng-options="l.LanguagePreference as l.LanguagePreference for (LanguagePreference, l) in languages"></select><br/>
+            <select id="voicechat" size="10" multiple="multiple" data-ng-model="newVoiceChat" class="dropdown input-large" data-ng-options="l.VoiceChatName as l.VoiceChatName for (VoiceChatName, l) in voiceChats"></select><br/>
         </div>
     </div>
 </div>

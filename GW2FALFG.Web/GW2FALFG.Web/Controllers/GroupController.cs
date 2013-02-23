@@ -6,27 +6,28 @@ using System.Net.Http;
 using System.Web.Http;
 using GW2FALFG.Web.Data;
 using GW2FALFG.Web.Models;
+using Newtonsoft.Json;
 
 namespace GW2FALFG.Web.Controllers
 {
     public class GroupController : ApiController
     {
-        public IGroupRequestRepository _groupRequestRepository { get; set; }
+        public IGroupRequestRepository _repository { get; set; }
 
-        public GroupController(IGroupRequestRepository groupRequestRepository)
+        public GroupController(IGroupRequestRepository repository)
         {
-            _groupRequestRepository = groupRequestRepository;
+            _repository = repository;
         }
         // GET api/event
         public IEnumerable<GroupRequest> Get()
         {
-            return _groupRequestRepository.GetAll();
+            return _repository.GetAll();
         }
 
         // GET api/event/5
         public HttpResponseMessage Get(int id)
         {
-            var grpReq = _groupRequestRepository.Get(id);
+            var grpReq = _repository.Get(id);
             if (grpReq == null)
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);
@@ -39,33 +40,33 @@ namespace GW2FALFG.Web.Controllers
         {
             var response = Request.CreateResponse(HttpStatusCode.Created, grpReq);
             response.Headers.Location = new Uri(Request.RequestUri, string.Format("api/group/{0}", grpReq.GroupRequestId));
-            _groupRequestRepository.Add(grpReq);
+            _repository.Add(grpReq);
             return response;
         }
 
         // PUT api/event/5
         public void Put(int id, GroupRequest grpReq)
         {
-            _groupRequestRepository.Update(grpReq);
+            _repository.Update(grpReq);
         }
 
         // DELETE api/event/5
         public HttpResponseMessage Delete(int id)
         {
-            _groupRequestRepository.Delete(id);
+            _repository.Delete(id);
             return Request.CreateResponse(HttpStatusCode.NoContent);
         }
 
         // DELETE api/event/5
         public HttpResponseMessage Delete()
         {
-            _groupRequestRepository.PurgeOld();
+            _repository.PurgeOld();
             return Request.CreateResponse(HttpStatusCode.NoContent);
         }
 
         public HttpResponseMessage GetByEventName(string eventName)
         {
-            var groupRequests = _groupRequestRepository.GetByEvent(eventName);
+            var groupRequests = _repository.GetByEvent(eventName);
             if (groupRequests == null)
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);
@@ -75,7 +76,7 @@ namespace GW2FALFG.Web.Controllers
 
         public HttpResponseMessage GetByUser(string userGuid, int q)
         {
-            var groupRequests = _groupRequestRepository.GetByUserGuid(userGuid);
+            var groupRequests = _repository.GetByUserGuid(userGuid);
             if (groupRequests == null)
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);

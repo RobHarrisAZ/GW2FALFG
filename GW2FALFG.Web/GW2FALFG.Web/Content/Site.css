@@ -28,18 +28,79 @@ a {
     text-decoration: none;
 }
 
-    a:link, a:visited,
-    a:active, a:hover {
-        color: #fff;
-    }
+a:link, a:visited,
+a:active, a:hover {
+    color: #fff;
+}
 
-    a:hover {
-        background-color: #c7d1d6;
-    }
+a:hover {
+    background-color: #c7d1d6;
+}
 
-header, footer, hgroup,
-nav, section {
+.voiceImages {
+    width: 42px;
+    height: 42px;
+    margin-right: 3px;
+}
+
+.voiceImagesSm {
+    width: 30px;
+    height: 30px;
+}
+
+.voiceImageDisplay {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.voiceImageDisplayItem {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer, hgroup, nav, section {
     display: block;
+}
+
+.elementalistImg {
+    width: 30px;
+    height: 30px;
+    background-image: url("/Content/images/elementalist.png");
+}
+.engineerImg {
+    width: 30px;
+    height: 30px;
+    background-image: url("/Content/images/engineer.png");
+}
+.guardianImg {
+    width: 30px;
+    height: 30px;
+    background-image: url("/Content/images/guardian.png");
+    background-size: 30px 30px;
+    display: block;
+}
+.rangerImg {
+    width: 30px;
+    height: 30px;
+    background-image: url("/Content/images/ranger.png");
+}
+.thiefImg {
+    width: 30px;
+    height: 30px;
+    background-image: url("/Content/images/thief.png");
+}
+.mesmerImg {
+    width: 30px;
+    height: 30px;
+    background-image: url("/Content/images/mesmer.png");
+}
+.warriorImg {
+    width: 30px;
+    height: 30px;
+    background-image: url("/Content/images/warrior.png");
+    background-size: 30px 30px;
 }
 
 header>h1 {

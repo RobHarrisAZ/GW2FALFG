@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GW2FALFG.Web.Models
@@ -10,8 +11,7 @@ namespace GW2FALFG.Web.Models
         [StringLength(255)]
         public string Description { get; set; }
         [Required]
-        [StringLength(128)]
-        public string EventName { get; set; }
+        public int EventId { get; set; }
         public int? Level { get; set; }
         [Required]
         [StringLength(64)]
@@ -21,7 +21,11 @@ namespace GW2FALFG.Web.Models
         [Required]
         [StringLength(40)]
         public string UserGuid { get; set; }
-        [StringLength(80)]
-        public string CharacterClassName { get; set; }
+        [Required]
+        public int CharacterClassId { get; set; }
+
+        public virtual Event Event { get; set; }
+        public virtual CharacterClass CharacterClass { get; set; }
+        public virtual ICollection<GroupVoiceChat> GroupVoiceChats { get; set; }
     }
 }
